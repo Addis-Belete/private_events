@@ -1,4 +1,10 @@
 class EventsController < ApplicationController
+    def index
+        @event = Event.all
+    end
+    def show
+        @event = Event.find(params[:id])
+    end
     def new
         @event = current_user.events.build 
     end
@@ -10,6 +16,7 @@ class EventsController < ApplicationController
         render :new
         end
         end 
+    
 private
 def params_events
 params.require(:events).permit(:title, :description) 
