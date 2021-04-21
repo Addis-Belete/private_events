@@ -1,3 +1,9 @@
-<%= form_with model: @event do |event|%>
-    <%event.label :description%> 
-<%end%> 
+<%= form_with model: @event do |event| %>
+<div>   
+ <% event.label :description %> 
+<%= event.text_field :description %>
+<div>
+<div>
+<%= event.submit %>
+</div>
+<% end %> 

@@ -1,1 +1,8 @@
-<h1>Welcome to our app</h1>
+<h1>Welcome to our app</h1><br>
+<% @user.each do |user| %>
+<%= user.name %><br>
+<%= user.email %><br>
+<% end %>
+<%= link_to "Log in", new_user_session_path %> <br>
+<%= link_to "sign up", new_user_registration_path %>
+<%= link_to "Sign out", "/users/sign_out", method: :delete %>

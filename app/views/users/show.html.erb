@@ -1,2 +1,7 @@
-<%= @user.email %>
-<% @user.events %>
+
+<h1>world</h1>
+<%= @user.each do |user| %>
+<% if user.events %>
+<%= user.events.description %>
+<% end %>
+<% end %>

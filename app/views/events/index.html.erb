@@ -1,1 +1,6 @@
-<%= @event.description%>
+<h3>Welcome to Events page</h3><br>
+<% @event.each do |event| %>
+<%= event.description %><br>
+<% end %>
+
+<%= link_to "Create Events", new_event_path %>
