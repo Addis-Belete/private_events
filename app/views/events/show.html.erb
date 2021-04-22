@@ -1,2 +1,8 @@
 <h3>Event creator</h3>
-<%= @event.user.name %>
+<% if @event.attendees.empty? %>
+<%= "there is no attendee" %>
+<% else %>
+<% @event.attendees.each do |attendee| %>
+<%= attendee.email %>
+<% end %>
+<% end %>

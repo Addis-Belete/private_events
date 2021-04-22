@@ -1,7 +1,3 @@
 
 <h1>world</h1>
-<%= @user.each do |user| %>
-<% if user.events %>
-<%= user.events.description %>
-<% end %>
-<% end %>
+<%= @user.event.description %>
