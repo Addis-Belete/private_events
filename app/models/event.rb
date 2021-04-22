@@ -3,6 +3,6 @@ class Event < ApplicationRecord
   has_many :event_atendances, foreign_key: :attended_event_id
   has_many :attendees, through: :event_atendances
 
-  scope :past, -> { where("events_date < ?", Date.today).order(events_date: :desc) }
-  scope :future, -> { where("events_date > ?", Date.today).order(:events_date) }
+  scope :past, -> { where("date_of_event < ?", Date.today).order(date_of_event: :desc) }
+  scope :future, -> { where("date_of_event > ?", Date.today).order(:date_of_event) }
 end
