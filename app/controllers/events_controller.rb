@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @event = Event.all
+    @past_event = Event.past
   end
 
   def show

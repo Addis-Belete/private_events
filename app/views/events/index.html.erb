@@ -1,6 +1,11 @@
 <h3>Welcome to Events page</h3><br>
-<% @event.each do |event| %>
-<%= event.description %><br>
+<% @event.past.each do |event| %>
+    <%= event.title %><br>
+    <%= event.description %> <br>
+    <%= event.date %> <br>
+    <%= event.user_id %>
+    <%= link_to "show", event %>
 <% end %>
+
 
 <%= link_to "Create Events", new_event_path %>
