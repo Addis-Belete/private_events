@@ -1,7 +1,12 @@
+<h3>New Event</h3>
 <%= form_with model: @event do |event| %>
 <div>   
- <% event.label :description %> 
-<%= event.text_field :description %>
+<%= event.label :title %><br>
+<%= event.text_field :title %><br>
+ <%= event.label :description %> <br>
+<%= event.text_field :description %><br>
+<%= event.label :events_date %> <br>
+<%= event.date_field :events_date %>
 <div>
 <div>
 <%= event.submit %>
