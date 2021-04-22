@@ -23,13 +23,6 @@ ActiveRecord::Schema.define(version: 2021_04_22_084941) do
     t.index ["user_id"], name: "index_event_atendances_on_user_id"
   end
 
-  create_table "event_attendances", force: :cascade do |t|
-    t.integer "attendee"
-    t.integer "attended_event"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.text "description"

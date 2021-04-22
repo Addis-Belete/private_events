@@ -2,8 +2,6 @@
 <% if @event.attendees %>
     <%= @event.title %>
     <%= @event.description %>
-    <%= @event.date %>
-    <%= @event.user_id %>
 <% else %>
 
 <% @event.attendees.each do |attendee| %>
