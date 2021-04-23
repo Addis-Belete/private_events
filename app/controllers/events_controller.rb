@@ -3,7 +3,6 @@ class EventsController < ApplicationController
 
   def index
     @event = Event.all
-    @past_event = Event.past
   end
 
   def show
@@ -20,6 +19,16 @@ class EventsController < ApplicationController
       redirect_to events_url
     else
       render :new
+    end
+  end
+
+  def attended_event
+    @event = Event.find(params[:id])
+    if @event.attendees.include?(current_user)
+      redirect_to @event, notice: "You are already on the list"
+    else
+      @event.attendees << current_user
+      redirect_to @event
     end
   end
 

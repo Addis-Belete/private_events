@@ -1,7 +1,7 @@
 <% if @user.attended_events.empty? %>
 <%= "The user doesnt attended any event" %>
 <% else %>
-<% @user.each do |event_attended| %>
+<% @user.attended_events.each do |event_attended| %>
 <%= event_attended.description %>
 <% end %>
 <% end %>
