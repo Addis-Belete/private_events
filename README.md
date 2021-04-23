@@ -31,7 +31,7 @@ $ rails s
 
 ## ✒️  Author <a name = "author"></a>
 
-👤 **Mert Gündüz**
+👤 **Addis Belete**
 - Github: [@Addis0943](https://github.com/Addis0943)
 - Linkedin: [Addid Belete](https://www.linkedin.com/in/addis-belete-134b98191/)
 
