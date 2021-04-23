@@ -10,7 +10,7 @@
 </ul>
 
 <%= event.description %><br>
-<%= link_to "See details", event_path(event) %>
+<%= details(event) %>
 
 <% end %>
 <h4>Past Events</h4>
@@ -23,6 +23,9 @@
 </li>
 </ul>
     <%= event.description %><br>
-<%= link_to "See details", event_path(event) %><br>
+<%= details(event) %><br>
 <% end %>
-<%= link_to "Create New Event", new_event_path %>
+<%= create %>
+
+<%= login %> <br>
+<%= signup %>

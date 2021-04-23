@@ -9,7 +9,6 @@
     
 <% else %>
 
-<%= button_to 'Attend', attend_path(@event), method: :post, confirm: 'really?' %>
 <% @event.attendees.each do |attendee| %>
 <%= attendee.name %>
 <% end %>
