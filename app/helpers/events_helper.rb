@@ -26,4 +26,8 @@ module EventsHelper
       button_to 'Attend', attended_event_event_path(event), method: :post, confirm: 'really?'
     end
   end
+
+  def profile
+    link_to 'User Profile', current_user
+  end
 end
