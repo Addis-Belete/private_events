@@ -26,14 +26,14 @@ class EventsController < ApplicationController
       redirect_to events_url
     else
       render :new
-      flash.now[:alert] = "Please fill all fields"
+      flash.now[:alert] = 'Please fill all fields'
     end
   end
 
   def attended_event
     @event = Event.find(params[:id])
     if @event.attendees.include?(current_user)
-      redirect_to @event, notice: "You are already on the list"
+      redirect_to @event, notice: 'You are already on the list'
     else
       @event.attendees << current_user
       redirect_to @event

@@ -1,37 +1,38 @@
+# rubocop: disable Lint/UnreachableLoop
 module UsersHelper
   def attended_event(event)
-    if event.attended_events.empty?
-      return "The user doesnt attended any event"
-    end
+    return 'The user doesnt attended any event' if event.attended_events.empty?
   end
 
   def created_event(event)
     if event.empty?
-      return "You didn't create any event"
+      "You didn't create any event"
     else
-      event.each do |event|
-        return event.description
+      event.each do |ev|
+        return ev.description
       end
     end
   end
 
   def past_event(event)
     if event.empty?
-      return "There is no past event attended"
+      'There is no past event attended'
     else
-      event.each do |event|
-        return event.description
+      event.each do |eve|
+        return eve.description
       end
     end
   end
 
   def up_coming(event)
     if event.empty?
-      return "There is no past event attended"
+      'There is no past event attended'
     else
-      event.each do |event|
-        return event.description
+      event.each do |even|
+        return even.description
       end
     end
   end
 end
+
+# rubocop: enable Lint/UnreachableLoop
