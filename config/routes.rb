@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :users, :require, only: [:show]
   resources :events, :require, only: [:new, :create, :index, :show]
   resources :events do
-    post 'attend', :user
+    member do
+      post "attended_event"
+    end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

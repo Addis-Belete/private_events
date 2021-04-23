@@ -1,11 +1,12 @@
 <h3>Event creator</h3>
-<% if @event.attendees %>
-    <%= @event.title %>
-    <%= @event.description %>
+<% if @event.attendees.empty? %>
+    <%= "no user attended" %>
+    
 <% else %>
 
 <%= button_to 'Attend', attend_path(@event), method: :post, confirm: 'really?' %>
 <% @event.attendees.each do |attendee| %>
-<%= attendee.email %>
+<%= attendee.name %>
 <% end %>
 <% end %>
+ <%= button_to "Attend", attended_event_event_path(@event), method: :post, confirm: "really?" %>
