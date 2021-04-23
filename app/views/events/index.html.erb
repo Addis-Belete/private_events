@@ -1,15 +1,28 @@
-<h3>Welcome to Events page</h3><br>
+<h3>Welcome to Events page</h3>
 <h4>Upcoming Events</h4>
 <% @event.future.each do |event| %>
-<%= event.description %><br>
-<% end %>
-<h4>Past Event</h4>
-<% @event.past.each do |event| %>
-    <%= event.title %><br>
-    <%= event.description %><br>
-    <%= event.date_of_event %><br>
-    <%= event.user_id %><br>
-<% end %>
+<ul>
+<li>
+<strong>
+<%= event.title %><br>
+</strong>
+</li>
+</ul>
 
-<%= link_to "show", events_path %>
-<%= link_to "Create Events", new_event_path %>
+<%= event.description %><br>
+<%= link_to "See details", event_path(event) %>
+
+<% end %>
+<h4>Past Events</h4>
+<% @event.past.each do |event| %>
+<ul>
+<li>
+<strong>
+    <%= event.title %><br>
+</strong>
+</li>
+</ul>
+    <%= event.description %><br>
+<%= link_to "See details", event_path(event) %><br>
+<% end %>
+<%= link_to "Create New Event", new_event_path %>

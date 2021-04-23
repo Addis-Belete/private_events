@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "users#index"
-  resources :users, :require, only: [:show]
-  resources :events, :require, only: [:new, :create, :index, :show]
+  root to: "events#index"
+  resources :users, only: [:show]
+  resources :events, only: [:new, :create, :index, :show]
   resources :events do
     member do
       post "attended_event"
