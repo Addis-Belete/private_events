@@ -17,7 +17,7 @@ class EventsController < ApplicationController
     @event.attendees << current_user
     @event.save
   end
-  
+
   def create
     @event = current_user.events.build(params_events)
     if @event.save
@@ -30,7 +30,7 @@ class EventsController < ApplicationController
   def attended_event
     @event = Event.find(params[:id])
     if @event.attendees.include?(current_user)
-      redirect_to @event, notice: "You are already on the list"
+      redirect_to @event, notice: 'You are already on the list'
     else
       @event.attendees << current_user
       redirect_to @event
