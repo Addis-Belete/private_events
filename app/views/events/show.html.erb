@@ -13,16 +13,10 @@
  <%= button_to "Attend", attended_event_event_path(@event), method: :post, confirm: "really?" %>
 </div>
 <div>
-<% if @event.attendees.empty? %>
-    <%= "No user attended this event" %>   
-<% else %>
+
 <p> List of attendee users:</p>
-<% @event.attendees.each do |attendee| %>
 <ul>
 <li>
-<%= attendee.name %>
+<%= attendee_list(@event) %>
 </li>
 </ul>
-	<% end %>
-	<% end %>
-</div>

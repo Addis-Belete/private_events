@@ -1,39 +1,27 @@
 <%= link_to "Back to Event page", events_path %>
 
-<% if @user.attended_events.empty? %>
-<%= "The user doesnt attended any event" %>
-<% end %>
-<p><strong>Created Events by You</strong></p>
-
-<% @created_events.each do |event| %>
+<%= attended_event(@user) %>
+	<div>
+<p><strong>Events Created by you</strong></p>
 <ul>
-<li>
-<%= event.description %>
-</li>
+	<li>
+	<%= created_event(@created_events) %>
+	</li>
 </ul>
-<% end %>
-<br>
-<p><strong> Past Event</strong></p>
-<% if @past_events.empty? %>
-<%= "There is no past event attended" %>
-<% else %>
-<% @past_events.each do |past_events| %>
+</div>
+<div>
+<p><strong>Past Events</strong></p>
 <ul>
-<li>
-<%= past_events.description %>
-</li>
+	<li>
+<%= past_event(@past_events) %>
+	</li>
 </ul>
-<% end %>
-<% end %>
-<p><strong> Up coming Event</strong></p>
-<% if @upcoming_events.empty? %>
-<%= "The there is no upcoming event attended" %>
-<% else %>
-<% @upcoming_events.each do |upcoming_events| %>
+</div>
+<div>
+<p><strong>Upcoming Events</strong></p>
 <ul>
-<li>
-<%= upcoming_events.description %>
-</li>
+	<li>
+ <%= up_coming(@upcoming_events) %>
+	</li>
 </ul>
-<% end %>
-<% end %>
+</div>
