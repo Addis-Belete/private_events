@@ -28,6 +28,6 @@ module EventsHelper
   end
 
   def profile
-    link_to "User Profile", current_user
+    link_to 'User Profile', current_user
   end
 end
