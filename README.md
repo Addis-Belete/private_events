@@ -1,6 +1,6 @@
 # Ruby On Rails: Private_Event
 
-We asked the build Private app. this app helps user to create multiple events and also let them to attend many events.
+We asked the build a Private app. this app helps the user to create multiple events and also lets them attend many events.
 
 ## Prerequisites
 

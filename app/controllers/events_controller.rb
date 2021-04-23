@@ -3,10 +3,15 @@ class EventsController < ApplicationController
 
   def index
     @event = Event.all
+    @past_events = Event.past
+    @future_events = Event.future
   end
 
   def show
     @event = Event.find(params[:id])
+    @created_events = current_user.events
+    @past_events = current_user.attended_events.past
+    @upcoming_events = current_user.attended_events.future
   end
 
   def new
@@ -30,7 +35,7 @@ class EventsController < ApplicationController
   def attended_event
     @event = Event.find(params[:id])
     if @event.attendees.include?(current_user)
-      redirect_to @event, notice: 'You are already on the list'
+      redirect_to @event, notice: "You are already on the list"
     else
       @event.attendees << current_user
       redirect_to @event
