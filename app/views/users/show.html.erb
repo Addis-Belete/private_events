@@ -1,7 +1,13 @@
+<%= link_to "Back to Event page", events_path %>
+
 <% if @user.attended_events.empty? %>
 <%= "The user doesnt attended any event" %>
 <% else %>
 <% @user.attended_events.each do |event_attended| %>
+<ul>
+<li>
 <%= event_attended.description %>
+</li>
+</ul>
 <% end %>
 <% end %>

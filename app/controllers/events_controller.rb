@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @event = Event.all
@@ -13,6 +13,11 @@ class EventsController < ApplicationController
     @event = current_user.events.build
   end
 
+  def attend
+    @event.attendees << current_user
+    @event.save
+  end
+  
   def create
     @event = current_user.events.build(params_events)
     if @event.save

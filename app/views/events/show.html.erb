@@ -1,15 +1,29 @@
-<h3>Event creator</h3>
-<%= @event.title %>
-<%= @event.description %>
-<%= @event.date_of_event %>
- <%= button_to "Attend", attended_event_event_path(@event), method: :post, confirm: "really?" %>
+<%= link_to "Back to Event page", events_path %><br>
+<%= link_to "Go to your attended events", current_user %>
+<div>
+<p><strong>Event Title:</strong><%= @event.title %></p>
+</div>
+<div>
+<p><strong>Description:</strong><%= @event.description %></p>
+</div>
+<div>
+<p><strong>Date:</strong><%= @event.date_of_event %></p>
 
+</div>
+<div>
+ <%= attend(@event) %>
+</div>
+<div>
 <% if @event.attendees.empty? %>
-    <%= "no user attended" %>
-    
+    <%= "No user attended this event" %>   
 <% else %>
-
+<p> List of attendee users:</p>
 <% @event.attendees.each do |attendee| %>
+<ul>
+<li>
 <%= attendee.name %>
-<% end %>
-<% end %>
+</li>
+</ul>
+	<% end %>
+	<% end %>
+</div>
