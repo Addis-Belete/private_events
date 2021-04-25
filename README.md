@@ -1,24 +1,49 @@
-# README
+# Ruby On Rails: Private_Event
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Private_event app helps the user to create multiple events and also lets them attend many events.
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+- Ruby (+3)
+- Ruby on Rails (+6)
+- Bundler (+2.1)
 
-* System dependencies
+## Cloning
 
-* Configuration
+- If you want to clone it locally with HTTPS
 
-* Database creation
+```
+$ git clone https://github.com/Addis0943/private_events.git
+```
 
-* Database initialization
+- If you want to clone it locally with SSH
 
-* How to run the test suite
+```
+$ git clone git@github.com:Addis0943/private_events.git
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Usage
 
-* Deployment instructions
+```
+$ cd private_events
+$ bundle install
+$ yarn install --check-files
+$ rails db:migrate
+$ rails s
+```
 
-* ...
+## ✒️ Author <a name = "author"></a>
+
+👤 **Addis Belete**
+
+- Github: [@Addis0943](https://github.com/Addis0943)
+- Linkedin: [Addid Belete](https://www.linkedin.com/in/addis-belete-134b98191/)
+
+👤 **Luqman Musah**
+
+- Github: [@luqmanmusah](https://github.com/luqmanmusah)
+- Linkedin: [Luqman Musah](https://www.linkedin.com/in/luqman-musah/)
+
+## 📝 License
+
+This Project has no Licence.

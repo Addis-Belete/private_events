@@ -1,0 +1,32 @@
+<h3>Welcome to Events page</h3>
+<h4>Upcoming Events</h4>
+<% @future_events.each do |event| %>
+<ul>
+<li>
+<strong>
+<%= event.title %><br>
+</strong>
+</li>
+</ul>
+<ul>
+<li>
+<%= event.description %><br>
+</li>
+</ul>
+<%= details(event) %>
+
+<% end %>
+<h4>Past Events</h4>
+<% @past_events.each do |event| %>
+<ul>
+<li>
+<strong>
+    <%= event.title %><br>
+</strong>
+</li>
+</ul>
+    <%= event.description %><br>
+<%= details(event) %><br>
+<% end %>
+
+

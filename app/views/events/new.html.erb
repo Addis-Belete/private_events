@@ -1,0 +1,29 @@
+<h3>New Event</h3>
+<%= form_with model: @event do |event| %>
+<div>   
+<div>
+<%= event.label :title %><br>
+<%= event.text_field :title %><br>
+ <% @event.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+<% end %>
+</div>
+<div>
+ <%= event.label :description %> <br>
+<%= event.text_field :description %><br>
+ <% @event.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div>
+<% end %>
+</div>
+<div>
+<%= event.label :date_of_event %> <br>
+<%= event.date_field :date_of_event %>
+ <% @event.errors.full_messages_for(:date_of_event).each do |message| %>
+      <div><%= message %></div>
+<% end %>
+</div>
+<div>
+<div>
+<%= event.submit %>
+</div>
+<% end %> 

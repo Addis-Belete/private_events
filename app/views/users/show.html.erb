@@ -1,0 +1,27 @@
+<%= link_to "Back to Event page", events_path %>
+
+<%= attended_event(@user) %>
+	<div>
+<p><strong>Events Created by you</strong></p>
+<ul>
+	<li>
+	<%= created_event(@created_events) %>
+	</li>
+</ul>
+</div>
+<div>
+<p><strong>Past Events</strong></p>
+<ul>
+	<li>
+<%= past_event(@past_events) %>
+	</li>
+</ul>
+</div>
+<div>
+<p><strong>Upcoming Events</strong></p>
+<ul>
+	<li>
+ <%= up_coming(@upcoming_events) %>
+	</li>
+</ul>
+</div>

@@ -1,0 +1,22 @@
+<%= link_to "Back to Event page", events_path %><br>
+<div>
+<p><strong>Event Title:</strong><%= @event.title %></p>
+</div>
+<div>
+<p><strong>Description:</strong><%= @event.description %></p>
+</div>
+<div>
+<p><strong>Date:</strong><%= @event.date_of_event %></p>
+
+</div>
+<div>
+ <%= button_to "Attend", attended_event_event_path(@event), method: :post, confirm: "really?" %>
+</div>
+<div>
+
+<p> List of attendee users:</p>
+<ul>
+<li>
+<%= attendee_list(@event) %>
+</li>
+</ul>
